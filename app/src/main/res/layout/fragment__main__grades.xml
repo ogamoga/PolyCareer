@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/grades_error_screen"
+        layout="@layout/untitled_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/grades_correct"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            tools:context=".screens.auth.grades.GradesFragment">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment__main__grades__head_tv"
+                style="@style/headerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:text="@string/fragment__auth__grades_choose"
+                app:layout_constraintBottom_toTopOf="@id/fragment__main__grades__desc_tv"
+                app:layout_constraintStart_toStartOf="@id/fragment__main__grades__desc_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment__main__grades__desc_tv"
+                style="@style/lightText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:paddingStart="30dp"
+                android:paddingEnd="20dp"
+                android:text="@string/fragment__auth__grades__desc_tv"
+                app:layout_constraintBottom_toTopOf="@id/fragment__main__grades__math_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment__main__grades__head_tv" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fragment__main__grades__next_btn"
+                style="@style/button"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/fragment_auth__sign_up__next_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment__main__grades__id_tv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment__main__grades__math_tv"
+                style="@style/regularText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/fragment__auth__grades__math_tv"
+                app:layout_constraintBottom_toTopOf="@id/fragment__main__grades__phys_tv"
+                app:layout_constraintEnd_toStartOf="@id/fragment__main__grades__math_ev"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment__main__grades__desc_tv" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/fragment__main__grades__math_ev"
+                style="@style/editText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:inputType="number"
+                android:maxLength="3"
+                app:layout_constraintBottom_toBottomOf="@id/fragment__main__grades__math_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment__main__grades__math_tv"
+                app:layout_constraintTop_toTopOf="@id/fragment__main__grades__math_tv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment__main__grades__phys_tv"
+                style="@style/regularText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/fragment__auth__grades__phys_tv"
+                app:layout_constraintBottom_toTopOf="@id/fragment__main__grades__rus_tv"
+                app:layout_constraintStart_toStartOf="@id/fragment__main__grades__math_tv"
+                app:layout_constraintTop_toBottomOf="@id/fragment__main__grades__math_tv" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/fragment__main__grades__phys_ev"
+                style="@style/editText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:inputType="number"
+                android:maxLength="3"
+                app:layout_constraintBottom_toBottomOf="@id/fragment__main__grades__phys_tv"
+                app:layout_constraintStart_toStartOf="@id/fragment__main__grades__math_ev"
+                app:layout_constraintTop_toTopOf="@id/fragment__main__grades__phys_tv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment__main__grades__rus_tv"
+                style="@style/regularText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/fragment__auth__grades__rus_tv"
+                app:layout_constraintBottom_toTopOf="@id/fragment__main__grades__inf_tv"
+                app:layout_constraintStart_toStartOf="@id/fragment__main__grades__math_tv"
+                app:layout_constraintTop_toBottomOf="@id/fragment__main__grades__phys_tv" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/fragment__main__grades__rus_ev"
+                style="@style/editText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:inputType="number"
+                android:maxLength="3"
+                app:layout_constraintBottom_toBottomOf="@id/fragment__main__grades__rus_tv"
+                app:layout_constraintStart_toStartOf="@id/fragment__main__grades__math_ev"
+                app:layout_constraintTop_toTopOf="@id/fragment__main__grades__rus_tv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment__main__grades__inf_tv"
+                style="@style/regularText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/fragment__auth__grades__inf_tv"
+                app:layout_constraintBottom_toTopOf="@id/fragment__main__grades__id_tv"
+                app:layout_constraintStart_toStartOf="@id/fragment__main__grades__math_tv"
+                app:layout_constraintTop_toBottomOf="@id/fragment__main__grades__rus_tv" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/fragment__main__grades__inf_ev"
+                style="@style/editText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:inputType="number"
+                android:maxLength="3"
+                app:layout_constraintBottom_toBottomOf="@id/fragment__main__grades__inf_tv"
+                app:layout_constraintStart_toStartOf="@id/fragment__main__grades__math_ev"
+                app:layout_constraintTop_toTopOf="@id/fragment__main__grades__inf_tv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fragment__main__grades__id_tv"
+                style="@style/regularText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/fragment__auth__grades__id_tv"
+                app:layout_constraintBottom_toTopOf="@id/fragment__main__grades__next_btn"
+                app:layout_constraintStart_toStartOf="@id/fragment__main__grades__math_tv"
+                app:layout_constraintTop_toBottomOf="@id/fragment__main__grades__inf_tv" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/fragment__main__grades__id_ev"
+                style="@style/editText"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:inputType="number"
+                android:maxLength="2"
+                app:layout_constraintBottom_toBottomOf="@id/fragment__main__grades__id_tv"
+                app:layout_constraintStart_toStartOf="@id/fragment__main__grades__math_ev"
+                app:layout_constraintTop_toTopOf="@id/fragment__main__grades__id_tv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/fragment__main__grades__loading_pb"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</FrameLayout>
+
